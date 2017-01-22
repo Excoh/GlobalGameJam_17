@@ -46,7 +46,6 @@ public class Star : MonoBehaviour {
             else print("This star is chosen already.");
         }
         else isLooking = false;
-
 	}
 
     void StartLooking()
