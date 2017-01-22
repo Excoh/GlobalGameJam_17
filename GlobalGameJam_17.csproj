@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\Star.cs" />
     <Compile Include="Assets\Scripts\StarManager.cs" />
     <Compile Include="Assets\Scripts\Test\Change2DColor.cs" />
+    <Compile Include="Assets\Scripts\Test\LookAtMove.cs" />
+    <Compile Include="Assets\Scripts\Test\SinMovement.cs" />
     <Compile Include="Assets\Scripts\Water.cs" />
     <Compile Include="Assets\Tobii\DemoScenes\Scripts\CloudPointVisualizer.cs" />
     <Compile Include="Assets\Tobii\DemoScenes\Scripts\Example01\PrintGazePosition.cs" />

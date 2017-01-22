@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/CubeGemLevel.unity
+- path: Assets/Scenes/LightWaveTest.unity
   isLoaded: 1
   isActive: 1

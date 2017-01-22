@@ -64,7 +64,7 @@ public class ReactOnUserInput : MonoBehaviour
     IEnumerator StartScaleEffect()
     {
         _useBlobEffect = true; 
-        yield return new WaitForSeconds(_waitingTime); // time it takes to expand
+        yield return new WaitForSeconds(_waitingTime);
         _useBlobEffect = false; 
     }
 }
