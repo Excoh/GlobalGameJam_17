@@ -31,9 +31,10 @@ public class Star : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if (_gazeAwareComponent.HasGazeFocus)
         {
-            if (!isChosen)
+            if (!isChosen && _starManager.canLook)
             {
                 if (!isLooking)
                 {
@@ -45,6 +46,7 @@ public class Star : MonoBehaviour {
             else print("This star is chosen already.");
         }
         else isLooking = false;
+
 	}
 
     void StartLooking()
@@ -57,5 +59,11 @@ public class Star : MonoBehaviour {
             _starManager.CheckStars(this.gameObject);
 
         }
+    }
+
+    public void ResetColor()
+    {
+        Debug.Log("Resetting Colors");
+        ren.sprite = col.currentSprite;
     }
 }

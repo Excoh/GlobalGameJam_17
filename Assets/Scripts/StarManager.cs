@@ -9,12 +9,18 @@ public class StarManager : MonoBehaviour {
     private int lookTime = 1; // time it takes until the star is "captured"
     private bool levelFinished;
 
+    public bool canLook;
+    public bool isResetting;
+    public int starsLookedAt;
+
     public int LookTime { get { return lookTime; } }
     public int StarMax { get { return starMax; } }
     public bool HasFinishedLevel { get { return levelFinished; } }
 	// Use this for initialization
 	void Start () {
         chosenStars = new ArrayList();
+        canLook = true;
+        starsLookedAt = 0;
         allStars = GameObject.FindGameObjectsWithTag("Star");
 	}
 
@@ -24,13 +30,17 @@ public class StarManager : MonoBehaviour {
     }
 
     public void CheckStars(GameObject star) // check to see 
-    { 
-        if (chosenStars.Count < starMax)
+    {
+
+        if (starsLookedAt < starMax && !isResetting)
         {
             chosenStars.Add(star);
+            Debug.Log("The current chosen star count: " + chosenStars.Count);
+            starsLookedAt++;
         }
 
-        if (chosenStars.Count >= starMax)
+
+        if (chosenStars.Count == starMax)
         {
             for (int i = 0; i < chosenStars.Count; i++)
             {
@@ -48,17 +58,43 @@ public class StarManager : MonoBehaviour {
 
             if (!levelFinished)
             {
-                ResetStars();
-                chosenStars.Add(star);
+                if(!isResetting)
+                {
+                    StartCoroutine("Reset");
+                }
+
                 Debug.Log("You didn't find the right combination!");
+            }
+            else
+            {
+                Debug.Log("You have finished the level!");
+                ClearStars();
             }
         }
 
-        if (levelFinished)
-        {
-            Debug.Log("You have completed the level!");
-        }
 
+
+    }
+
+    IEnumerator Reset()
+    {
+        isResetting = true;
+        canLook = false;
+        yield return new WaitForSeconds(2);
+        canLook = true;
+        isResetting = false;
+        ResetStars();
+    }
+
+    void ClearStars()
+    {
+        foreach(GameObject star in allStars)
+        {
+            if (!star.GetComponent<Star>().isGoal)
+            {
+                Destroy(star);
+            }
+        }
     }
 
     void ResetStars()
@@ -66,8 +102,10 @@ public class StarManager : MonoBehaviour {
         foreach (GameObject star in allStars)
         {
             star.GetComponent<Star>().Chosen = false;
+            star.GetComponent<Star>().ResetColor();
         }
         chosenStars.Clear();
+        starsLookedAt = 0;
         Debug.Log("Everything is resetted.");
     }
 }

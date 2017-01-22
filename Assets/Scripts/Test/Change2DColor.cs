@@ -10,7 +10,7 @@ public class Change2DColor : MonoBehaviour {
     private GazeAware _gazeAwareComponent;
     private SpriteRenderer _spriteRenderer;
     private Star isChosenStar;
-    [SerializeField] private Sprite currentSprite;
+    public Sprite currentSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -23,15 +23,13 @@ public class Change2DColor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (!isChosenStar.Chosen)
+        if (!isChosenStar.Chosen )
         {
             if (_gazeAwareComponent.HasGazeFocus)
             {
                 Debug.Log("Looking at Sprite");
 
                 _spriteRenderer.sprite = spriteToChange;
-
-
             }
             else _spriteRenderer.sprite = currentSprite;
         }
