@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalGameJam_17-v_pre-Alex", "GlobalGameJam_17-v_pre-Alex.csproj", "{C938D310-84DE-5474-A762-66EEE38A6E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalGameJam_17-v_pre-Alex.Editor", "GlobalGameJam_17-v_pre-Alex.Editor.csproj", "{843991C0-AE3E-00D7-D069-212C84E229DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C938D310-84DE-5474-A762-66EEE38A6E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C938D310-84DE-5474-A762-66EEE38A6E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C938D310-84DE-5474-A762-66EEE38A6E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C938D310-84DE-5474-A762-66EEE38A6E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843991C0-AE3E-00D7-D069-212C84E229DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843991C0-AE3E-00D7-D069-212C84E229DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843991C0-AE3E-00D7-D069-212C84E229DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843991C0-AE3E-00D7-D069-212C84E229DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
